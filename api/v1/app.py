@@ -2,6 +2,8 @@
 """
     Flask application
 """
+
+
 from flask import Flask
 from models import storage
 from ap1.v1.views import app_views
