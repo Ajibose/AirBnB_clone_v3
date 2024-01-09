@@ -16,6 +16,7 @@ def tear_down():
     """Clean up resources"""
     storage.close()
 
+
 if __name__ == "__main__":
     host = os.environ.get("HBNB_API_HOST", "0.0.0.0")
     port = os.environ.get("HBNB_API_PORT", 5000)
