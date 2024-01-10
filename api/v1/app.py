@@ -4,7 +4,7 @@
 """
 
 
-from flask import Flask
+from flask import Flask, jsonify
 from models import storage
 from api.v1.views import app_views
 import os
@@ -19,6 +19,11 @@ host = os.environ.get("HBNB_API_HOST", "0.0.0.0")
 def tear_down(exception):
     """Clean up resources"""
     storage.close()
+
+@app.errorhandler(404)
+def error404_handler(error):
+    """Hnadler for error 404"""
+    return jsonify({"error": "Not found"})
 
 
 if __name__ == "__main__":
