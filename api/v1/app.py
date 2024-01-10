@@ -6,7 +6,7 @@
 
 from flask import Flask
 from models import storage
-from ap1.v1.views import app_views
+from api.v1.views import app_views
 
 
 app = Flask(__name__)
