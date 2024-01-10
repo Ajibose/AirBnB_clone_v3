@@ -20,6 +20,7 @@ def tear_down(exception):
     """Clean up resources"""
     storage.close()
 
+
 @app.errorhandler(404)
 def error404_handler(error):
     """Hnadler for error 404"""
