@@ -11,7 +11,6 @@ import os
 
 
 app = Flask(__name__)
-app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
 host = os.environ.get("HBNB_API_HOST", "0.0.0.0")
 
