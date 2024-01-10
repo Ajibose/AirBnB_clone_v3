@@ -14,6 +14,7 @@ app = Flask(__name__)
 app.register_blueprint(app_views)
 host = os.environ.get("HBNB_API_HOST", "0.0.0.0")
 
+
 @app.teardown_appcontext
 def tear_down(exception):
     """Clean up resources"""
