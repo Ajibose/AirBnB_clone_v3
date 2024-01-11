@@ -60,7 +60,7 @@ def update_state(state_id):
     ikeys = ['id', 'created_at', 'updated_at']
     states = storage.all().values()
     objList = [obj for obj in states if state_id == obj.id]
-    if not obj:
+    if not objList:
         abort(404)
 
     obj = objList[0]
