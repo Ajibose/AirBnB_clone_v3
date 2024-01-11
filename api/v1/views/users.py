@@ -8,7 +8,7 @@ from flask import abort, jsonify, request, make_response
 from api.v1.views import app_views
 
 
-@app_views.route("/users/")
+@app_views.route("/users")
 @app_views.route("/users/<user_id>")
 def retrieve_user(user_id=None):
     """Return all user object"""
