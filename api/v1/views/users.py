@@ -42,8 +42,11 @@ def create_user():
     if not request.json:
         abort(400, 'Not a JSON')
 
-    if 'name' not in request.json:
-        abort(400, 'Missing name')
+    if 'email' not in request.json:
+        abort(400, 'Missing email')
+
+    if 'password' not in request.json:
+        abort(400, 'Missing password')
 
     argDict = request.get_json()
     new_user = User(**argDict)
