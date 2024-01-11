@@ -15,7 +15,8 @@ def retrieve_states(state_id=None):
     objs = storage.all().values()
     if state_id:
         objList = [obj for obj in objs if state_id == obj.id]
-        return jsonify(objList[0].to_dict())
+        if objList[0]:
+            return jsonify(objList[0].to_dict())
         abort(404)
     else:
         objList = [obj.to_dict() for obj in objs]
