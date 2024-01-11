@@ -15,7 +15,7 @@ def retrieve_states(state_id=None):
     objs = storage.all().values()
     if state_id:
         objList = [obj for obj in objs if state_id == obj.id]
-        if objList[0]:
+        if objList:
             return jsonify(objList[0].to_dict())
         abort(404)
     else:
@@ -60,9 +60,10 @@ def update_state(state_id):
     ikeys = ['id', 'created_at', 'updated_at']
     states = storage.all().values()
     objList = [obj for obj in states if state_id == obj.id]
-    obj = objList[0]
     if not obj:
         abort(404)
+
+    obj = objList[0]
 
     argDict = request.get_json()
     for k, v in argDict.items():
